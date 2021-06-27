@@ -23,11 +23,12 @@ if ($status == false) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <title>ユーザー管理</title>
 </head>
 <body>
@@ -36,18 +37,24 @@ if ($status == false) {
 <main>
     <h2>既存ユーザー編集</h2>
     <form method="POST" action="update.php">
-        <p>名前：<input type="text" name ="name" value = "<?=$result['name']?>" id="name"></p>
-        <p>LID：<input type="text" name="lid" value = "<?=$result['lid']?>" id="lid"></p>
-        <p>LPW：<input type="text" name="lpw" value = "<?=$result['lpw']?>" id="lpw"></p>
-        <p>管理者<input type="radio" name="kanri_flg" value = "0" <?php if($result['kanri_flg'] == '0') echo 'checked="checked"'?> id="kanri_flg"></p>
-        <p>スーパー管理者<input type="radio" name="kanri_flg" value="1" <?php if($result['kanri_flg'] == '1') echo 'checked="checked"'?> id="kanri_flg"></p>
-        <p>退社<input type="radio" name="life_flg" value="0" <?php if($result['life_flg'] == '0') echo 'checked="checked"'?> id="life_flg"></p>
-        <p>入社<input type="radio" name="life_flg" value="1" <?php if($result['life_flg'] == '1') echo 'checked="checked"'?> id="life_flg"></p>
+        <p class="centering">名前：<input type="text" name ="name" value = "<?=$result['name']?>" id="name"></p>
+        <p class="centering">LID：<input type="text" name="lid" value = "<?=$result['lid']?>" id="lid"></p>
+        <p class="centering">LPW：<input type="text" name="lpw" value = "<?=$result['lpw']?>" id="lpw"></p>
+        
+        <p class="kanri">
+            管理者<input type="radio" name="kanri_flg" value = "0" <?php if($result['kanri_flg'] == '0') echo 'checked="checked"'?> id="kanri_flg">
+            スーパー管理者<input type="radio" name="kanri_flg" value="1" <?php if($result['kanri_flg'] == '1') echo 'checked="checked"'?> >
+        </p>
+        <p class="life">
+            退社<input type="radio" name="life_flg" value="0" <?php if($result['life_flg'] == '0') echo 'checked="checked"'?> id="life_flg">
+            入社<input type="radio" name="life_flg" value="1" <?php if($result['life_flg'] == '1') echo 'checked="checked"'?> >
+        </p>
         <p><input type="hidden" name ="id" value= "<?=$result['id']?>"></p>
-        <p><input type="submit" id="submit" value="登録"></p>
+        <p class="centering"><input type="submit" id="submit" value="登録"></p>
     </form>
 <p class="all">
     <a href="select.php">登録済みユーザーを表示（編集・削除もこちら）</a>
+    <br>
     <a href="index.php">新規登録画面へ</a>
 </p>
 

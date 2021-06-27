@@ -50,7 +50,7 @@ if ($status == false) {
     <?= $view ?>
 </table>
 
-<p class="return"><a href="index.php">目次に戻る</a></p>
+<p class="return"><a href="index.php">新規登録画面へ</a></p>
 
 </body>
 </html>
